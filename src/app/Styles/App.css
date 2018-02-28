@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+}
+
+.logo {
+  flex: 1;
+  display: inline-block;
+  margin-left: 40vw;
+  margin-top: 3vh;
+}
+
+.authentication-button {
+  margin-top: 4vh;
+  margin-right: 1.5vw;
+}
