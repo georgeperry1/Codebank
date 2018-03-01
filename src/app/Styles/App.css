@@ -1,15 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.main {
+  background:linear-gradient(-50deg, rgb(252, 252, 252) 8%,#17c4fb 70% ,#836bfb 94%);
+  height:100vh;
+  width:100vw;
+}
+
 .header {
   display: flex;
 }
 
 .logo {
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: .2rem;
+  font-size: 58px;
+  color: white;
   flex: 1;
   display: inline-block;
-  margin-left: 40vw;
-  margin-top: 3vh;
+  margin-left: 42vw;
+  margin-top: 4vh;
+  text-decoration: none;
 }
 
-.authentication-button {
+.logo a:hover {
+  color: white;
+}
+
+.auth-button {
   margin-top: 4vh;
   margin-right: 1.5vw;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: #17c4fb;
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(190, 185, 185, 0.5);
+  -moz-box-shadow: 1px 1px 1px 1px rgba(190, 185, 185, 0.5);
+  box-shadow: 1px 1px 1px 1px rgba(190, 185, 185, 0.5);
+}
+
+
+@-webkit-keyframes auth-button {
+  0% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+
+  100% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes auth-button {
+  0% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+
+  100% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+}
+
+@-webkit-keyframes auth-button-float {
+  100% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes auth-button-float {
+  100% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+}
+
+.auth-button {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.auth-button:hover, .auth-button:focus, .auth-button:active {
+  color: #17c4fb;
+  background-color: white;
+  -webkit-animation-name: auth-button-float, auth-button;
+  animation-name: auth-button-float, auth-button;
+  -webkit-animation-duration: .3s, 1.5s;
+  animation-duration: .3s, 1.5s;
+  -webkit-animation-delay: 0s, .3s;
+  animation-delay: 0s, .3s;
+  -webkit-animation-timing-function: ease-out, ease-in-out;
+  animation-timing-function: ease-out, ease-in-out;
+  -webkit-animation-iteration-count: 1, infinite;
+  animation-iteration-count: 1, infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-direction: normal, alternate;
+  animation-direction: normal, alternate;
 }

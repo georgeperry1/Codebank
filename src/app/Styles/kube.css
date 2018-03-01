@@ -138,7 +138,6 @@ body {
   line-height: 24px; }
 
 body {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   color: #313439;
   background-color: transparent; }
 
@@ -149,7 +148,6 @@ a:hover {
   color: #f03c69; }
 
 h1.title, h1, h2, h3, h4, h5, h6 {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: bold;
   color: #0d0d0e;
   text-rendering: optimizeLegibility;
@@ -346,7 +344,8 @@ sub {
   bottom: 1px; }
 
 pre, code, samp, var, kbd {
-  font-family: Consolas, Monaco, "Courier New", monospace; }
+  font-family: 'Open Sans', sans-serif;
+}
 
 pre, code, samp, var, kbd, mark {
   font-size: 87.5%; }
@@ -398,7 +397,8 @@ ul.unstyled ul {
   list-style: none; }
 
 .monospace {
-  font-family: Consolas, Monaco, "Courier New", monospace; }
+  font-family: 'Open Sans', sans-serif;
+ }
 
 .upper {
   text-transform: uppercase; }
@@ -972,7 +972,7 @@ form,
 
 button,
 .button {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 15px;
   color: #fff;
   background-color: #1c86f2;
@@ -2002,7 +2002,7 @@ button:hover,
         background: rgba(0, 0, 0, 0.05); }
 
 .message {
-  font-family: Consolas, Monaco, "Courier New", monospace;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   line-height: 20px;
   background: #e0e1e1;
