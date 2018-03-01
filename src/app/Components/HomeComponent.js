@@ -17,7 +17,12 @@ export const HomeComponent = (props) => (
     <div className='row' id='home-button-container'>
       <div className='col col-5'></div>
       <div className='col col-2'>
-        <button className='home-button'>Explore Vaults</button>
+        <button
+          className='home-button'
+          onClick=''
+        >
+          Explore Vaults
+        </button>
       </div>
       <div className='col col-5'></div>
     </div>
