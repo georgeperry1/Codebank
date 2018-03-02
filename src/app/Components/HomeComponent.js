@@ -4,11 +4,6 @@ import React from 'react';
 import '../Styles/HomeComponent.css';
 
 export class HomeComponent extends React.Component {
-
-  handleClick = (props) => {
-    this.props.goToVaultsPage();
-  }
-
   render() {
     return (
       <div>

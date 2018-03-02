@@ -13,8 +13,6 @@ const store = createStore(reducer);
 
 ReactDOM.render(
   <Provider store={store}>
-    <HashRouter>
-      <App />
-    </HashRouter>
+    <App />
   </Provider>,
   document.getElementById('app'));

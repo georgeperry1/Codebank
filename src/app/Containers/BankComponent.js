@@ -28,7 +28,7 @@ class BankComponent extends React.Component {
 
 
 const mapStateToProps = (state) => ({
-  vaults: state.vaults
+  // vaults: state.vaults
 });
 
 const mapDispatchToProps = (dispatch) => ({
