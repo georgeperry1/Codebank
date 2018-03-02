@@ -10,13 +10,18 @@ import '../Styles/normalize.css';
 import '../Styles/App.css';
 
 export default class App extends React.Component {
+
+  handleClick = () => {
+    console.log('Click handled');
+  }
+
   render() {
     return (
       <div className='main'>
-        <div className='row'>
+        <div className='row' id='codebank-nav'>
           <div className='col col-5'></div>
           <div className='col col-2' id='header'>
-            <h1 className='logo'><a>Codebank</a></h1>
+            <h1 className='logo'><a href='/#/'>Codebank</a></h1>
           </div>
           <div className='col col-3'></div>
           <div className='col col-2'>
@@ -27,8 +32,14 @@ export default class App extends React.Component {
           </div>
         </div>
         <Switch >
-          <Route exact path='/' component={HomeComponent}/>
-          <Route path='/vaults' component={BankComponent}/>
+          <Route
+            exact path='/'
+            render={(props) => (<HomeComponent goToVaultsPage={this.handleClick}/>)}
+          />
+          <Route
+            path='/vaults'
+            render={(props) => (<BankComponent />)}
+          />
           <Route path='/profile' component={ProfileComponent}/>
         </Switch>
       </div>
