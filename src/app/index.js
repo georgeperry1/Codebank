@@ -6,10 +6,9 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import vaultReducer from './Reducers/VaultReducer';
 
-const reducer = () => {console.log('Reducer')};
-
-const store = createStore(reducer);
+const store = createStore(vaultReducer);
 
 ReactDOM.render(
   <Provider store={store}>

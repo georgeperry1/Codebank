@@ -12,11 +12,6 @@ import '../Styles/App.css';
 
 
 class App extends React.Component {
-
-  handleClick = () => {
-    console.log('It worked');
-  }
-
   render() {
     return (
       <div className='main'>
@@ -57,7 +52,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  // vaults: state.vaults
+  vaults: state.vaults
 });
 
 export default connect(mapStateToProps, null)(App);

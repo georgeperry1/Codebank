@@ -1,5 +1,6 @@
 'use strict';
 
+import { BankListComponent } from '../Components/BankListComponent';
 import { connect } from 'react-redux';
 import React from 'react';
 import * as VaultActions from '../Actions/VaultActions';
@@ -14,13 +15,13 @@ class BankComponent extends React.Component {
       method: 'GET'
     })
     .then(response => response.json())
-    .then(vaults => console.log(vaults))
+    .then(vaults => this.props.addVaults(vaults))
   }
 
   render() {
     return (
       <div>
-        <h1>Bank Vaults</h1>
+        <BankListComponent />
       </div>
     )
   }
@@ -28,7 +29,7 @@ class BankComponent extends React.Component {
 
 
 const mapStateToProps = (state) => ({
-  // vaults: state.vaults
+  vaults: state.vaults
 });
 
 const mapDispatchToProps = (dispatch) => ({
