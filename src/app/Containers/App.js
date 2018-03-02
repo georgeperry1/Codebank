@@ -1,5 +1,6 @@
 'use strict';
 
+import { connect } from 'react-redux';
 import { BankComponent } from './BankComponent';
 import { HomeComponent } from '../Components/HomeComponent';
 import { ProfileComponent } from '../Components/ProfileComponent';
@@ -9,12 +10,8 @@ import '../Styles/kube.css';
 import '../Styles/normalize.css';
 import '../Styles/App.css';
 
-export default class App extends React.Component {
 
-  handleClick = () => {
-    console.log('Click handled');
-  }
-
+class App extends React.Component {
   render() {
     return (
       <div className='main'>
@@ -48,3 +45,9 @@ export default class App extends React.Component {
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  // vaults: state.vaults
+});
+
+export default connect(mapStateToProps, null)(App);
