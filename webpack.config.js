@@ -18,8 +18,6 @@ const config = {
     rules: [
       {
         test: /\.jsx?/,
-        // exclude: /node_modules/,
-        // include: SRC_DIR,
         use: {
           loader: 'babel-loader',
           options: {
@@ -29,15 +27,16 @@ const config = {
       },
       {
         test: /\.css$/,
-        // include: SRC_DIR,
         use: ['style-loader', 'css-loader']
       },
       {
         test: /\.s(a|c)ss$/,
-        // include: SRC_DIR,
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
-
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: ['file-loader']
+      }
     ]
   }
 }

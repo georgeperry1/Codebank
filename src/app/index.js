@@ -1,7 +1,6 @@
 'use strict';
 
 import App from './Containers/App';
-import { HashRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import React from 'react';
