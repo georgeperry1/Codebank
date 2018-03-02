@@ -19,15 +19,17 @@ export default class App extends React.Component {
     return (
       <div className='main'>
         <div className='row' id='codebank-nav'>
-          <div className='col col-5'></div>
+          <div className='col col-5'>
+            <p className='home-button'><a href='/#/'>Home</a></p>
+          </div>
           <div className='col col-2' id='header'>
             <h1 className='logo'><a href='/#/'>Codebank</a></h1>
           </div>
           <div className='col col-3'></div>
           <div className='col col-2'>
             <div className='auth-button-container'>
-              <button className='auth-button'>Login</button>
-              <button className='auth-button'>Sign Up</button>
+              <p className='auth-button'><a href='/#/'>Login</a></p>
+              <p className='auth-button'><a href='/#/'>Sign Up</a></p>
             </div>
           </div>
         </div>

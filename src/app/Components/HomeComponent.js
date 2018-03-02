@@ -19,11 +19,9 @@ export class HomeComponent extends React.Component {
             <p>for Coding Content</p>
           </div>
         </div>
-        <div className='row align-center' id='home-button-container'>
+        <div className='row align-center' id='explore-button-container'>
           <div className='col col-2'>
-            <button className='home-button' onClick={this.handleClick}>
-              Explore Vaults
-            </button>
+            <p className='explore-button'><a href='/#/vaults'>Explore Vaults</a></p>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 'use strict';
 
 import App from './Containers/App';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import React from 'react';
@@ -13,8 +13,8 @@ const store = createStore(reducer);
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter>
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </Provider>,
   document.getElementById('app'));
