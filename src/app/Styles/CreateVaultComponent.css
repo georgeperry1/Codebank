@@ -1,28 +1,37 @@
-* {
+.create-vault-button-container {
+  max-height: 70px;
+}
+
+.cv {
+  float: right;
+}
+
+.create-vault-button {
+  height: 50px;
+  width: 200px;
+  margin-top: 14px;
+  margin-left: 50px;
+  font-weight: bold;
+  font-size: 18px;
+  border: 1px solid #00b4ff;
+  border-radius: 10px;
   color: #FBFCFD;
-  font-weight: lighter;
-}
-
-.vault-name {
-  color: #FBFCFD;
-  font-weight: lighter;
-}
-
-.vault-description {
-  margin-top: 10px;
-}
-
-.bank-list-item {
-  background-color: rgba(255, 255, 255, 0.19);
-  min-width: 150px;
-  border-radius: 6px;
+  background-color: #00b4ff;
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(176,176,176,0.5);
+  -moz-box-shadow: 1px 1px 1px 1px rgba(176,176,176,0.5);
+  box-shadow: 1px 1px 1px 1px rgba(176,176,176,0.5);
   text-align: center;
-  margin: 0px 10px;
-  padding: 10px 30px;
-  min-width: 150px;
+  padding-top: 10px;
+  letter-spacing: .1rem;
+  text-decoration: none;
 }
 
-@-webkit-keyframes bank-list-item {
+.create-vault-button:hover {
+  color: #FBFCFD;
+  text-decoration: none;
+}
+
+@-webkit-keyframes create-vault-button {
   0% {
     -webkit-transform: translateY(-6px);
     transform: translateY(-6px);
@@ -39,7 +48,7 @@
   }
 }
 
-@keyframes bank-list-item {
+@keyframes create-vault-button {
   0% {
     -webkit-transform: translateY(-6px);
     transform: translateY(-6px);
@@ -56,21 +65,21 @@
   }
 }
 
-@-webkit-keyframes bank-list-item-float {
+@-webkit-keyframes create-vault-button-float {
   100% {
     -webkit-transform: translateY(-6px);
     transform: translateY(-6px);
   }
 }
 
-@keyframes bank-list-item-float {
+@keyframes create-vault-button-float {
   100% {
     -webkit-transform: translateY(-6px);
     transform: translateY(-6px);
   }
 }
 
-.bank-list-item {
+.create-vault-button {
   display: block;
   vertical-align: middle;
   -webkit-transform: translateZ(0);
@@ -80,9 +89,11 @@
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
 }
-.bank-list-item:hover, .bank-list-item:focus, .bank-list-item:active {
-  -webkit-animation-name: bank-list-item-float, bank-list-item;
-  animation-name: bank-list-item-float, bank-list-item;
+.create-vault-button:hover, .create-vault-button:focus, .create-vault-button:active {
+  color: #FBFCFD;
+  background-color: #00b4ff;
+  -webkit-animation-name: create-vault-button-float, create-vault-button;
+  animation-name: create-vault-button-float, create-vault-button;
   -webkit-animation-duration: .3s, 1.5s;
   animation-duration: .3s, 1.5s;
   -webkit-animation-delay: 0s, .3s;
