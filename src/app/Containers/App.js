@@ -10,7 +10,6 @@ import '../Styles/kube.css';
 import '../Styles/normalize.css';
 import '../Styles/App.css';
 
-
 class App extends React.Component {
   render() {
     return (
