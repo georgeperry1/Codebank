@@ -29,6 +29,12 @@
   box-shadow: 4px 4px 10px 0px rgba(176,176,176,0.5);
 }
 
+.bank-list-item-a {
+  margin: 0;
+  display: inline-block;
+  text-decoration: none;
+}
+
 @-webkit-keyframes bank-list-item {
   0% {
     -webkit-transform: translateY(-6px);

@@ -2,6 +2,7 @@
 
 import { connect } from 'react-redux';
 import BankComponent from './BankComponent';
+import VaultComponent from './VaultComponent';
 import { HomeComponent } from '../Components/HomeComponent';
 import { ProfileComponent } from '../Components/ProfileComponent';
 import React from 'react';
@@ -41,6 +42,12 @@ class App extends React.Component {
               exact={true} path='/vaults'
               render={(props) => (
                 <BankComponent/>
+              )}
+            />
+            <Route
+              exact={true} path='/vault/:vault_id'
+              render={(props) => (
+                <VaultComponent/>
               )}
             />
           </Switch>
