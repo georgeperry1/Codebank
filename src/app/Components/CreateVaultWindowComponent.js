@@ -4,8 +4,19 @@ import '../Styles/CreateVaultWindowComponent.css';
 
 export class CreateVaultWindowComponent extends React.Component {
 
-createNewVault = () => {
-
+handleClick = () => {
+  const cryptsArray = this.crypts.value.replace(/\s/g, '').split(',');
+  const newVaultInfo = {
+    name: this.name.value,
+    url: this.url.value,
+    description: this.description.value,
+    crypts: cryptsArray
+  };
+  this.props.createNewVault(newVaultInfo);
+  this.name.value = null;
+  this.url.value = null;
+  this.description.value = null;
+  this.crypts.value = null;
 }
 
 render() {
@@ -21,6 +32,7 @@ render() {
               type='text'
               placeholder='Example.js'
               ref={(input) => {this.name = input}}
+              required
             ></input>
           </div>
           <div className='form-item'>
@@ -29,6 +41,7 @@ render() {
               type='text'
               placeholder='https://github.com/examplejs/'
               ref={(input) => {this.url = input}}
+              required
             ></input>
             <div className='desc'>Enter a homepage or GitHub Repo</div>
           </div>
@@ -36,14 +49,26 @@ render() {
             <label>Vault Description <span className='req'>*</span></label>
             <textarea
               rows='4'
+              placeholder='Example.js is an example library...'
               ref={(input) => {this.description = input}}
+              required
+            ></textarea>
+          </div>
+          <div className='form-item'>
+            <label>Vault Crypts</label>
+            <div className='desc'>Crypts are topics within each Vault - e.g. JSX would be a Crypt within React.js. Separate with a comma</div>
+            <textarea
+              className='create-vault-forms-crypts'
+              placeholder='JSX, Components, etc...'
+              rows='2'
+              ref={(input) => {this.crypts = input}}
             ></textarea>
           </div>
           <div className='form-button-container'>
             <button
-              className='form-button'
+              className='create-vault-form-button'
               type='submit'
-              onClick={this.createNewVault}
+              onClick={this.handleClick}
             >
               Submit Vault
             </button>

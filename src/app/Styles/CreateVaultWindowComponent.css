@@ -15,8 +15,8 @@
   position: absolute;
   left: 25%;
   right: 25%;
-  top: 20%;
-  bottom: 22%;
+  top: 12%;
+  bottom: 16%;
   margin: auto;
   background-color: #FBFCFD;
   border: 1px solid #a8afb8;
@@ -28,5 +28,9 @@
 }
 
 .form-button-container {
-  margin-top: 50px;
+  margin-top: 40px;
+}
+
+.create-vault-forms-crypts {
+  margin-top: 12px;
 }

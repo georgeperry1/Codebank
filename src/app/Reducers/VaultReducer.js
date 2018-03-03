@@ -7,13 +7,13 @@ const defaultState = {
 export default (state = defaultState, action) => {
   switch (action.type) {
     case 'ADD_VAULTS':
-    console.log('ACTION:', action);
+    //console.log('ACTION:', action);
       return {
         ...state,
         vaults: action.vaults
       }
     case 'CREATE_VAULT':
-      //console.log('ACTION:', action);
+      console.log('CREATE ACTION:', action);
       return {
         ...state,
         vaults: [
@@ -34,7 +34,6 @@ export default (state = defaultState, action) => {
           .filter(vault => vault.name !== action.vault)
       }
     default:
-      console.log('DEFAULT');
       return state;
   }
 }

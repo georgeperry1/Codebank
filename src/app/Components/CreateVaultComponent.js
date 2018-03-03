@@ -18,7 +18,27 @@ class CreateVaultComponent extends React.Component {
     this.setState({
       showWindow:!this.state.showWindow
     });
-    //Send signal to main component
+  }
+
+  createNewVault = (newVaultInfo) => {
+    this.setState({
+      showWindow:!this.state.showWindow
+    })
+    console.log('INFO:', newVaultInfo);
+    fetch('http://localhost:3000/vaults/create', {
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newVaultInfo)
+    })
+    .then(response => {
+      if (response.status === 404) this.props.createVaultFail(newVaultInfo);
+    })
+    .catch(error => {
+      console.log('Error with POST request:', error);
+    })
+    this.props.createVault(newVaultInfo);
   }
 
   render() {
@@ -31,7 +51,7 @@ class CreateVaultComponent extends React.Component {
           >
             Create Vault
           </button>
-          {this.state.showWindow ? <CreateVaultWindowComponent /> : null}
+          {this.state.showWindow ? <CreateVaultWindowComponent createNewVault={(newVaultInfo) => {this.createNewVault(newVaultInfo)}}/> : null}
         </div>
       </div>
     )
