@@ -9,13 +9,15 @@
 .create-vault-button {
   height: 50px;
   width: 200px;
-  margin-top: 14px;
+  margin-top: 35px;
   margin-left: 50px;
   font-weight: bold;
   font-size: 18px;
   border-radius: 10px;
-  color: #00b4ff;
-  background-color: #FBFCFD;
+  background-color: #00b4ff;
+  color: #FBFCFD;
+  border: 1px solid #0095d4;
+  background-image: linear-gradient(#00b4ff,#05a6e9);
   -webkit-box-shadow: 1px 1px 1px 1px rgba(176,176,176,0.5);
   -moz-box-shadow: 1px 1px 1px 1px rgba(176,176,176,0.5);
   box-shadow: 1px 1px 1px 1px rgba(176,176,176,0.5);
@@ -84,8 +86,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .create-vault-button:hover, .create-vault-button:focus, .create-vault-button:active {
-  color: #00b4ff;
-  background-color: #FBFCFD;
+  background-color: #00b4ff;
+  color: #FBFCFD;
   -webkit-animation-name: create-vault-button-float, create-vault-button;
   animation-name: create-vault-button-float, create-vault-button;
   -webkit-animation-duration: .3s, 1.5s;

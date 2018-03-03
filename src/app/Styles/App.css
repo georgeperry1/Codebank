@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500');
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500'); */
+/* @import url('https://fonts.googleapis.com/css?family=Raleway'); */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500|Nova+Round:300,400,500');
+
 
 * {
-  font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
   border: 0;
@@ -20,20 +21,22 @@
 
 #codebank-nav {
   margin-top: 0;
+  max-height: 100px;
 }
 
 .logo {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Nova Round', cursive;
   letter-spacing: .2rem;
-  font-size: 58px;
+  font-size: 50px;
   color: #FBFCFD;
   display: inline-block;
-  margin-top: 6vh;
-  margin-left: 10px;
+  margin-top: 2vh;
+  text-align: center;
   text-decoration: none;
 }
 
 .logo a {
+  font-weight: 300;
   text-decoration: none;
 }
 
@@ -42,10 +45,11 @@
 }
 
 .auth-button {
+  font-family: 'Open Sans', sans-serif;
   display: inline-block;
   height: 40px;
   width: 100px;
-  margin-top: 8vh;
+  margin-top: 4vh;
   margin-right: 1.5vw;
   /* border: 1px solid #00b4ff;
   border-radius: 10px;
@@ -56,7 +60,8 @@
 }
 
 .auth-button a {
-  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
   color: #FBFCFD;
   text-decoration: none;
 }
@@ -67,10 +72,11 @@
 }
 
 .home-button {
+  font-family: 'Open Sans', sans-serif;
   display: inline-block;
   height: 40px;
   width: 100px;
-  margin-top: 8vh;
+  margin-top: 4vh;
   margin-left: 6vw;
   /* border: 1px solid #00b4ff;
   border-radius: 10px;
@@ -81,7 +87,8 @@
 }
 
 .home-button a {
-  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
   color: #FBFCFD;
   text-decoration: none;
 }

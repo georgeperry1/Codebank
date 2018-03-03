@@ -3,6 +3,7 @@
 }
 
 #home-writing p {
+  font-family: 'Open Sans', sans-serif;
   color: #FBFCFD;
   font-weight: 40;
   font-size: 48px;
@@ -10,6 +11,7 @@
 }
 
 #explore-button-container {
+  font-family: 'Open Sans', sans-serif;
   margin-top: 5vh;
 }
 

@@ -1,20 +1,20 @@
 .bank-list-component {
   max-height: 500px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #FBFCFD;
   margin: 20px 40px;
   border-radius: 4px;
   padding: 30px;
+  box-shadow: 0 1px 3px 0 rgba(59,59,88,.15);
 }
 
 .bank-list-heading {
-  color: #FBFCFD;
+  color: #5c617b;
   font-weight: lighter;
   padding-top: 0;
 }
 
 .bank-list-hr {
   background-color: #FBFCFD;
-  opacity: 0.2;
   margin-bottom: 20px;
   height: 3px;
   border-radius: 10px;

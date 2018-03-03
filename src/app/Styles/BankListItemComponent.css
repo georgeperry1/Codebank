@@ -1,25 +1,32 @@
 * {
-  color: #FBFCFD;
+  color: #5c617b;
   font-weight: lighter;
 }
 
 .vault-name {
-  color: #FBFCFD;
-  font-weight: lighter;
+  color: #5c617b;
+  font-weight: 400;
 }
 
 .vault-description {
   margin-top: 10px;
+  color: #6d859e;
 }
 
 .bank-list-item {
-  background-color: rgba(255, 255, 255, 0.19);
+  cursor: pointer;
+  background-color: #ecf3f8;
   min-width: 150px;
   border-radius: 6px;
   text-align: center;
   margin: 0px 10px;
   padding: 10px 30px;
   min-width: 150px;
+  border: 0.5px solid #d8e0ea;
+  /* box-shadow: 0 1px 3px 0 rgba(59,59,88,.15); */
+  -webkit-box-shadow: 4px 4px 10px 0px rgba(176,176,176,0.5);
+  -moz-box-shadow: 4px 4px 10px 0px rgba(176,176,176,0.5);
+  box-shadow: 4px 4px 10px 0px rgba(176,176,176,0.5);
 }
 
 @-webkit-keyframes bank-list-item {
