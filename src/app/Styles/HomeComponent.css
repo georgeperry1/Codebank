@@ -26,10 +26,9 @@
   margin-left: 55px;
   font-weight: bold;
   font-size: 18px;
-  border: 1px solid #00b4ff;
   border-radius: 10px;
   color: #FBFCFD;
-  background-color: #00b4ff;
+  background-color: #1c86f2;
   -webkit-box-shadow: 1px 1px 1px 1px rgba(176,176,176,0.5);
   -moz-box-shadow: 1px 1px 1px 1px rgba(176,176,176,0.5);
   box-shadow: 1px 1px 1px 1px rgba(176,176,176,0.5);
@@ -108,7 +107,7 @@
 }
 .explore-button:hover, .explore-button:focus, .explore-button:active {
   color: #FBFCFD;
-  background-color: #00b4ff;
+  background-color: #1c86f2;
   -webkit-animation-name: explore-button-float, explore-button;
   animation-name: explore-button-float, explore-button;
   -webkit-animation-duration: .3s, 1.5s;

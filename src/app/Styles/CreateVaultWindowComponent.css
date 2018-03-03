@@ -7,7 +7,7 @@
   right: 0;
   bottom: 0;
   margin: auto;
-  background-color: rgba(0,0,0, 0.5);
+  background-color: rgb(143, 143, 143);
 }
 
 .create-vault-window-inner {
@@ -15,9 +15,18 @@
   position: absolute;
   left: 25%;
   right: 25%;
-  top: 25%;
-  bottom: 25%;
+  top: 20%;
+  bottom: 22%;
   margin: auto;
-  background: white;
+  background-color: #FBFCFD;
+  border: 1px solid #a8afb8;
   border-radius: 5px;
+}
+
+.create-vault-window-form {
+  padding: 30px;
+}
+
+.form-button-container {
+  margin-top: 50px;
 }
