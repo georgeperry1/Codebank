@@ -67,7 +67,6 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  addVaults: (vaults) => dispatch(VaultActions.addVaultsAction(vaults)),
   createVault: (vault) => dispatch(VaultActions.createVaultAction(vault)),
   createVaultFail: (vault) => dispatch(VaultActions.createVaultFailAction(vault))
 })

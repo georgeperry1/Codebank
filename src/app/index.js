@@ -1,13 +1,19 @@
 'use strict';
 
 import App from './Containers/App';
-import { createStore } from 'redux';
+import { apiService } from './Middleware/apiService';
+import { composeWithDevTools } from 'redux-devtools-extension'
+import { createStore, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
 import { Provider } from 'react-redux';
+// import promise from 'redux-promise-middleware';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import rootReducer from './Reducers/RootReducer';
+import thunk from 'redux-thunk';
 
-const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const middlewares = applyMiddleware(logger, thunk, apiService);
+const store = createStore(rootReducer, composeWithDevTools(middlewares));
 
 ReactDOM.render(
   <Provider store={store}>

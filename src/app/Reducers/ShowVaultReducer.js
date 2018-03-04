@@ -1,7 +1,7 @@
 'use strict';
 
 const defaultState = {
-  selectedVault: {}
+  selectedVault: []
 };
 
 export default (state = defaultState, action) => {

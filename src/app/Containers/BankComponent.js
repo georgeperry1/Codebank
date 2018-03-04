@@ -8,16 +8,8 @@ import * as VaultActions from '../Actions/VaultActions';
 import '../Styles/BankComponent.css';
 
 class BankComponent extends React.Component {
-  componentDidMount() {
-    this.fetchVaults();
-  }
-
-  fetchVaults = () => {
-    fetch('http://localhost:3000/vaults', {
-      method: 'GET'
-    })
-    .then(response => response.json())
-    .then(vaults => this.props.addVaults(vaults))
+  componentDidMount = () => {
+    this.props.requestVaults(this.props.vaults);
   }
 
   render() {
@@ -41,7 +33,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    addVaults: (vaults) => dispatch(VaultActions.addVaultsAction(vaults)),
+    requestVaults: (vaults) => dispatch(VaultActions.requestVaults(vaults)),
   }
 }
 
