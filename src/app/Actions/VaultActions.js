@@ -15,3 +15,9 @@ export const createVaultFailAction = (vault) => ({
   type: CREATE_VAULT_FAIL,
   vault,
 });
+
+export const SHOW_VAULT = 'SHOW_VAULT';
+export const showVaultAction = (vault) => ({
+  type: SHOW_VAULT,
+  vault,
+});

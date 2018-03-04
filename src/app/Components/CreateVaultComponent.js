@@ -39,6 +39,7 @@ class CreateVaultComponent extends React.Component {
       console.log('Error with POST request:', error);
     })
     this.props.createVault(newVaultInfo);
+    //this.props.addVaults(this.props.vaults);
   }
 
   render() {
@@ -58,9 +59,17 @@ class CreateVaultComponent extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    vaults: state.vaultReducer.vaults,
+    selectedVault: state.showVaultReducer.selectedVault
+  }
+}
+
 const mapDispatchToProps = (dispatch) => ({
+  addVaults: (vaults) => dispatch(VaultActions.addVaultsAction(vaults)),
   createVault: (vault) => dispatch(VaultActions.createVaultAction(vault)),
   createVaultFail: (vault) => dispatch(VaultActions.createVaultFailAction(vault))
 })
 
-export default connect(null, mapDispatchToProps)(CreateVaultComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateVaultComponent);

@@ -33,12 +33,16 @@ class BankComponent extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  vaults: state.vaults
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  addVaults: (vaults) => dispatch(VaultActions.addVaultsAction(vaults)),
-})
+const mapStateToProps = (state) => {
+  return {
+    vaults: state.vaultReducer.vaults,
+    selectedVault: state.showVaultReducer.selectedVault
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addVaults: (vaults) => dispatch(VaultActions.addVaultsAction(vaults)),
+  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(BankComponent);
