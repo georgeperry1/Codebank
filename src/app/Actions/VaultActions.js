@@ -5,7 +5,8 @@ export const requestVaults = (vaults) => {
     type: REQUEST_VAULTS,
     vaults: vaults,
     meta: {
-      params: '/vaults'
+      params: '/vaults',
+      method: 'GET'
     }
   }
 }
@@ -25,32 +26,16 @@ export const failedFetchVaults = (vaults) => {
     vaults: vaults
   }
 }
-//4: Combine all FetchVaults Action Functions
-// export const addVaultsAction = (vaults) => {
-//   return (dispatch) => {
-//     dispatch(requestVaults(vaults))
-//     fetch('http://localhost:3000/vaults', {
-//       method: 'GET'
-//     })
-//     .then(response => {
-//       return response.json()
-//       error => console.log('ERROR IN addVaultsAction', error);
-//     })
-//     .then(vaults => {
-//       console.log('RESPONSE FROM FETCH:', vaults);
-//       dispatch(receiveVaults(vaults))
-//     })
-//   }
-// }
-
-
-//FOR LATER
 
 //Create Vault
 export const CREATE_VAULT = 'CREATE_VAULT';
 export const createVaultAction = (vault) => ({
   type: CREATE_VAULT,
-  vault,
+  vault: vault,
+  meta: {
+    params: '/vaults/create',
+    method: 'POST'
+  }
 });
 
 //Create Vault Fail

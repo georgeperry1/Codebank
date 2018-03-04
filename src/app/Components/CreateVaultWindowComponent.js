@@ -67,7 +67,7 @@ render() {
           <div className='form-button-container'>
             <button
               className='create-vault-form-button'
-              type='submit'
+              type='button'
               onClick={this.handleClick}
             >
               Submit Vault

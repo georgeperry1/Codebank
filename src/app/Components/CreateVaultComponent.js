@@ -23,23 +23,8 @@ class CreateVaultComponent extends React.Component {
   createNewVault = (newVaultInfo) => {
     this.setState({
       showWindow:!this.state.showWindow
-    })
-    console.log('INFO:', newVaultInfo);
-    fetch('http://localhost:3000/vaults/create', {
-      method: 'POST',
-      header: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(newVaultInfo)
-    })
-    .then(response => {
-      if (response.status === 404) this.props.createVaultFail(newVaultInfo);
-    })
-    .catch(error => {
-      console.log('Error with POST request:', error);
-    })
+    });
     this.props.createVault(newVaultInfo);
-    //this.props.addVaults(this.props.vaults);
   }
 
   render() {

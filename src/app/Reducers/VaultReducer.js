@@ -9,7 +9,7 @@ import {
 const defaultState = {
   fetching: false,
   fetched: false,
-  vaults: {}
+  vaults: []
 };
 
 export default (state = defaultState, action) => {
@@ -31,27 +31,25 @@ export default (state = defaultState, action) => {
         fetched: true,
         vaults: action.vaults
       }
-    // case 'CREATE_VAULT':
-    //   //console.log('CREATE ACTION:', action);
-    //   return {
-    //     ...state,
-    //     vaults: {
-    //       ...state.vaults,
-    //       [action.vault._id]: {
-    //         name: action.vault.name,
-    //         url: action.vault.url,
-    //         description: action.vault.description,
-    //         id: action.vault._id,
-    //         crypts: action.vault.crypts
-    //       },
-    //     }
-    //   }
-    // case 'CREATE_VAULT_FAIL':
-    //   return {
-    //     ...state,
-    //     vaults: state.vaults
-    //       .filter(vault => vault.name !== action.vault)
-    //   }
+    case 'CREATE_VAULT':
+      return {
+        ...state,
+        vaults: [
+          ...state.vaults,
+          {
+            name: action.vault.name,
+            url: action.vault.url,
+            description: action.vault.description,
+            _id: action.vault._id,
+            crypts: action.vault.crypts
+          },
+        ]
+      }
+    case 'CREATE_VAULT_FAIL':
+      return {
+        ...state,
+        vaults: state.vaults.filter(vault => vault.name !== action.vault.name)
+      }
     default:
       return state;
   }
