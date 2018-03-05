@@ -37,7 +37,7 @@ class CreateCryptComponent extends React.Component {
           >
             Create Crypt
           </button>
-          {this.state.showWindow ? <CreateCryptWindowComponent createNewCrypt={(newCryptInfo) => {this.createNewCrypt(newCryptInfo)}}/> : null}
+          {this.state.showWindow ? <CreateCryptWindowComponent parentVault={this.props.selectedVault._id} createNewCrypt={(newCryptInfo) => {this.createNewCrypt(newCryptInfo)}}/> : null}
         </div>
       </div>
     )

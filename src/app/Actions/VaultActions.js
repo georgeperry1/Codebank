@@ -29,7 +29,7 @@ export const failedFetchVaults = (vaults) => {
   }
 }
 
-//Create Vault
+//4: Create Vault
 export const CREATE_VAULT = 'CREATE_VAULT';
 export const createVaultAction = (vault) => ({
   type: CREATE_VAULT,
@@ -40,14 +40,14 @@ export const createVaultAction = (vault) => ({
   }
 });
 
-//Create Vault Fail
+//5: Create Vault Fail
 export const CREATE_VAULT_FAIL = 'CREATE_VAULT_FAIL';
 export const createVaultFailAction = (vault) => ({
   type: CREATE_VAULT_FAIL,
   vault: vault
 });
 
-//Pass a specific ID to store
+//6: Pass a specific ID to store
 export const PASS_VAULT_ID = 'PASS_VAULT_ID';
 export const passVaultIdAction = (passedId) => {
   return {
@@ -56,7 +56,7 @@ export const passVaultIdAction = (passedId) => {
   }
 }
 
-//Show a vault that the user has clicked on
+//7: Show a vault that the user has clicked on
 export const SHOW_VAULT = 'SHOW_VAULT';
 export const showVaultAction = (vaultId) => {
   return {
@@ -69,7 +69,7 @@ export const showVaultAction = (vaultId) => {
   }
 };
 
-//If SHOW_VAULT request is successfull
+//8: If SHOW_VAULT request is successfull
 export const SHOW_VAULT_SUCCESS = 'SHOW_VAULT_SUCCESS'
 export const showVaultSuccessAction = (vault) => {
   return {
@@ -78,7 +78,7 @@ export const showVaultSuccessAction = (vault) => {
   }
 }
 
-//If SHOW_VAULT request is a failure
+//9: If SHOW_VAULT request is a failure
 export const SHOW_VAULT_FAIL = 'SHOW_VAULT_FAIL'
 export const showVaultFailAction = (vault) => {
   return {

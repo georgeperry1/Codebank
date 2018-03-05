@@ -6,8 +6,10 @@ import '../Styles/CreateCryptWindowComponent.css';
 export class CreateCryptWindowComponent extends React.Component {
   handleClick = () => {
     const newCryptInfo = {
-      name: this.name.value
+      name: this.name.value,
+      parentVault: this.props.parentVault
     };
+    console.log('Crypt Info:', newCryptInfo);
     this.props.createNewCrypt(newVaultInfo);
     this.name.value = null;
   }
