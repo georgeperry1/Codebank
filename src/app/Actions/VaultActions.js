@@ -1,3 +1,5 @@
+'use strict'
+
 //1: requestVaults Action Function
 export const REQUEST_VAULTS = 'REQUEST_VAULTS'
 export const requestVaults = (vaults) => {
@@ -42,12 +44,34 @@ export const createVaultAction = (vault) => ({
 export const CREATE_VAULT_FAIL = 'CREATE_VAULT_FAIL';
 export const createVaultFailAction = (vault) => ({
   type: CREATE_VAULT_FAIL,
-  vault,
+  vault: vault
 });
 
 //Show a vault that the user has clicked on
 export const SHOW_VAULT = 'SHOW_VAULT';
-export const showVaultAction = (vault) => ({
+export const showVaultAction = (vaultId) => ({
   type: SHOW_VAULT,
-  vault,
+  vaultId: vaultId,
+  meta: {
+    params: `/vault/${vaultId}`,
+    method: 'GET'
+  }
 });
+
+//If SHOW_VAULT request is successfull
+export const SHOW_VAULT_SUCCESS = 'SHOW_VAULT_SUCCESS'
+export const showVaultSuccessAction = (vault) => {
+  return {
+    type: SHOW_VAULT_SUCCESS,
+    vault: vault
+  }
+}
+
+//If SHOW_VAULT request is a failure
+export const SHOW_VAULT_FAIL = 'SHOW_VAULT_FAIL'
+export const showVaultFailAction = (vault) => {
+  return {
+    type: SHOW_VAULT_FAIL,
+    vault: vault
+  }
+}

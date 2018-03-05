@@ -36,7 +36,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    showVault: (vault) => dispatch(VaultActions.showVaultAction(vault))
+    showVault: (vaultId) => dispatch(VaultActions.showVaultAction(vaultId))
   }
 }
 

@@ -1,9 +1,11 @@
-'use strict';
+'use strict'
 
 import {
   REQUEST_VAULTS,
   RECEIVE_VAULTS,
-  RECEIVE_VAULTS_FAIL
+  RECEIVE_VAULTS_FAIL,
+  CREATE_VAULT,
+  CREATE_VAULT_FAIL
 } from '../Actions/VaultActions';
 
 const defaultState = {
@@ -22,6 +24,7 @@ export default (state = defaultState, action) => {
     case RECEIVE_VAULTS_FAIL:
       return {
         ...state,
+        fetching: false,
         fetched: false
       }
     case RECEIVE_VAULTS:
@@ -31,7 +34,7 @@ export default (state = defaultState, action) => {
         fetched: true,
         vaults: action.vaults
       }
-    case 'CREATE_VAULT':
+    case CREATE_VAULT:
       return {
         ...state,
         vaults: [
@@ -45,7 +48,7 @@ export default (state = defaultState, action) => {
           },
         ]
       }
-    case 'CREATE_VAULT_FAIL':
+    case CREATE_VAULT_FAIL:
       return {
         ...state,
         vaults: state.vaults.filter(vault => vault.name !== action.vault.name)

@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 import { connect } from 'react-redux';
 import { CreateVaultWindowComponent } from  '../Components/CreateVaultWindowComponent';

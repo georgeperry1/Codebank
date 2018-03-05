@@ -1,18 +1,20 @@
 'use strict'
 
-// import { normalize, schema } from 'normalizr';
-// import * as VaultActions from '../Actions/VaultActions';
 import {
   REQUEST_VAULTS,
   RECEIVE_VAULTS,
   RECEIVE_VAULTS_FAIL,
   CREATE_VAULT,
-  CREATE_VAULT_FAIL
+  CREATE_VAULT_FAIL,
+  SHOW_VAULT,
+  SHOW_VAULT_SUCCESS,
+  SHOW_VAULT_FAIL
 } from '../Actions/VaultActions';
 
 const API_ROOT = 'http://localhost:3000';
 
 export const apiService = store => next => action => {
+  //Populate Vaults
   if (action.type === REQUEST_VAULTS) {
     fetch(API_ROOT + action.meta.params)
     .then(response => response.json())
@@ -33,9 +35,8 @@ export const apiService = store => next => action => {
       }
     })
   }
-
+  //Create a new Vault
   if (action.type === CREATE_VAULT) {
-    console.log('CRYPTS:', action.vault);
     fetch(API_ROOT + action.meta.params, {
       method: 'POST',
       header: {
@@ -57,6 +58,27 @@ export const apiService = store => next => action => {
           type: CREATE_VAULT,
           vault: action.vault
         }
+      }
+    })
+  }
+  //Show a specified Vault that a user clicks on
+  if (action.type === SHOW_VAULT) {
+    fetch(API_ROOT + action.meta.params)
+    .then(response => response.json())
+    .then(fetchedVault => {
+      if (fetchedVault) {
+        let newAction = {
+          ...action,
+          type: SHOW_VAULT_SUCCESS,
+          vault: fetchVault
+        }
+        store.dispatch(newAction);
+      } else {
+        let newAction = {
+          ...action,
+          type: SHOW_VAULT_FAIL
+        }
+        store.dispatch(newAction);
       }
     })
   }
