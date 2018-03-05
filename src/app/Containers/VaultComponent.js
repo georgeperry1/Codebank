@@ -7,16 +7,14 @@ import * as VaultActions from '../Actions/VaultActions';
 import '../Styles/VaultComponent.css';
 
 class VaultComponent extends React.Component {
-  componentWillMount() {
+  componentDidMount = () => {
     //Collect data on the selected vault
     if(!this.props.passedId) return null;
     this.props.showVault(this.props.passedId);
-  }
-
-  componentDidMount() {
     //Render the list of
     this.renderCryptList();
   }
+
 
   renderCryptList() {
     const crypts = this.props.selectedVault.crypts;

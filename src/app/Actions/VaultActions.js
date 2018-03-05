@@ -50,7 +50,6 @@ export const createVaultFailAction = (vault) => ({
 //Pass a specific ID to store
 export const PASS_VAULT_ID = 'PASS_VAULT_ID';
 export const passVaultIdAction = (passedId) => {
-  console.log('PASS Action dispatched');
   return {
     type: PASS_VAULT_ID,
     passedId: passedId

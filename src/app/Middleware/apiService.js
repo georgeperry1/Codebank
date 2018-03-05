@@ -63,7 +63,6 @@ export const apiService = store => next => action => {
   }
   //Show a specified Vault that a user clicks on
   if (action.type === SHOW_VAULT) {
-    console.log('Made it to API Service');
     fetch(API_ROOT + action.meta.params)
     .then(response => response.json())
     .then(fetchedVault => {

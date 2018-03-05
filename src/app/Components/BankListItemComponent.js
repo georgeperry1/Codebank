@@ -10,7 +10,6 @@ import '../Styles/BankListItemComponent.css';
 class BankListItemComponent extends React.Component {
 
   handleClick = () => {
-    console.log('Click handled');
     const vaultId = this.props.vault._id;
     this.props.passId(vaultId);
   }
