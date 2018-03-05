@@ -1,6 +1,7 @@
 'use strict'
 
 import { connect } from 'react-redux';
+import CreateCryptComponent from '../Components/CreateCryptComponent';
 import { CryptListComponent } from '../Components/CryptListComponent';
 import React from 'react';
 import * as VaultActions from '../Actions/VaultActions';
@@ -42,17 +43,17 @@ class VaultComponent extends React.Component {
       <div className='vault-body'>
         <div className='vault-container'>
           <div className='vault-navigation-container'>
-            <div className='col col-7'>
+            <div className='col col-12'>
               <h4 className='vault-header'>{vault.name}</h4>
-            </div>
-            <div className='col col-3 push-right'>
-              <h5 className='create-crypt-button'>CREATE CRYPT</h5>
             </div>
           </div>
           <hr className='vault-hr'/>
           <div className='vault-content'>
             <div className='col col-3 crypt-list'>
-              <h4 className='crypt-list-header'>Crypts</h4>
+              <div className='crypt-list-header-container'>
+                <h4 className='crypt-list-header'>Crypts</h4>
+                <CreateCryptComponent />
+              </div>
               <hr className='vault-hr'/>
               {this.renderCryptList()}
             </div>

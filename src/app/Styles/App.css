@@ -85,6 +85,7 @@
   box-shadow: 1px 1px 1px 1px rgba(190, 185, 185, 0.5); */
 }
 
+
 .home-button a {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
@@ -93,6 +94,27 @@
 }
 
 .home-button a:hover {
+  color: #00b4ff;
+  text-decoration: none;
+}
+
+.vault-button {
+  font-family: 'Open Sans', sans-serif;
+  display: inline-block;
+  height: 40px;
+  width: 100px;
+  margin-top: 4vh;
+  margin-left: 30px;
+}
+
+.vault-button a {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  color: #FBFCFD;
+  text-decoration: none;
+}
+
+.vault-button a:hover {
   color: #00b4ff;
   text-decoration: none;
 }

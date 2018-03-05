@@ -28,11 +28,6 @@
   font-size: 32px;
 }
 
-.create-crypt-button {
-  flex: 3;
-  float: right;
-}
-
 .vault-hr {
   background-color: #FBFCFD;
   margin-bottom: 20px;
@@ -54,8 +49,13 @@
   box-shadow: 0 1px 3px 0 rgba(59,59,88,.15);
 }
 
+.crypt-list-header-container {
+  display: flex;
+}
+
 .crypt-list-header {
-  color: #5c617b;
+  flex: 3;
+  color: #6d859e;
   font-weight: lighter;
   font-size: 24px;
 }
@@ -77,7 +77,7 @@
 
 .crypt-content-header {
   flex: 10;
-  color: #5c617b;
+  color: #6d859e;
   font-weight: lighter;
   font-size: 24px;
 }

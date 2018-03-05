@@ -1,0 +1,91 @@
+.crypt-list-item h5 {
+  cursor: pointer;
+  border: 0.5px solid #FBFCFD;
+  border-radius: 10px;
+  margin-left: 0px;
+  padding: 10px 20px;
+  color: #FBFCFD;
+  font-weight: lighter;
+  display: inline-block;
+  text-decoration: none;
+	background-image: -moz-linear-gradient(left, rgba(28, 175, 198, 0.75) 0%, rgba(28, 193, 198, 0.75) 100%); /* FF3.6+ */
+	background-image: -webkit-linear-gradient(left, rgba(28, 175, 198, 0.75) 0%,rgba(28, 193, 198, 0.75) 100%); /* Chrome10+,Safari5.1+ */
+	background-image: -o-linear-gradient(left, rgba(28, 175, 198, 0.75) 0%,rgba(28, 193, 198, 0.75) 100%); /* Opera 11.10+ */
+	background-image: linear-gradient(left, rgba(28, 175, 198, 0.75) 0%,rgba(28, 193, 198, 0.75) 100%); /* W3C */
+}
+
+@-webkit-keyframes crypt-list-item {
+  0% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+
+  100% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes crypt-list-item {
+  0% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+
+  100% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+@-webkit-keyframes crypt-list-item-float {
+  100% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes crypt-list-item-float {
+  100% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+.crypt-list-item {
+  display: block;
+  max-width: content;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.crypt-list-item:hover, .crypt-list-item:focus, .crypt-list-item:active {
+  -webkit-animation-name: crypt-list-item-float, crypt-list-item;
+  animation-name: crypt-list-item-float, crypt-list-item;
+  -webkit-animation-duration: .3s, 1.5s;
+  animation-duration: .3s, 1.5s;
+  -webkit-animation-delay: 0s, .3s;
+  animation-delay: 0s, .3s;
+  -webkit-animation-timing-function: ease-out, ease-in-out;
+  animation-timing-function: ease-out, ease-in-out;
+  -webkit-animation-iteration-count: 1, infinite;
+  animation-iteration-count: 1, infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-direction: normal, alternate;
+  animation-direction: normal, alternate;
+}
