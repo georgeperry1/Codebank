@@ -45,7 +45,7 @@ class App extends React.Component {
               )}
             />
             <Route
-              exact={true} path='/vault/:vault_id'
+              exact={true} path='/vault/:vaultId'
               render={(props) => (
                 <VaultComponent/>
               )}

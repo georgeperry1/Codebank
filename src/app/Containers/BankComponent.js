@@ -15,7 +15,7 @@ class BankComponent extends React.Component {
   render() {
     return (
       <div className='bank-list-container'>
-        <div className='vault-navigation-container'>
+        <div className='bank-navigation-container'>
           <CreateVaultComponent />
         </div>
         <BankListComponent heading={'Most Popular'} vaults={this.props.vaults}/>

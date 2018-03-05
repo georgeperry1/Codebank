@@ -1,21 +1,76 @@
 'use strict'
 
 import { connect } from 'react-redux';
+import { CryptListComponent } from '../Components/CryptListComponent';
 import React from 'react';
 import * as VaultActions from '../Actions/VaultActions';
 import '../Styles/VaultComponent.css';
 
 class VaultComponent extends React.Component {
-  componentDidMount() {
+  componentWillMount() {
+    //Collect data on the selected vault
+    if(!this.props.passedId) return null;
     this.props.showVault(this.props.passedId);
   }
 
-//Get vault from selected vault
+  componentDidMount() {
+    //Render the list of
+    this.renderCryptList();
+  }
+
+  renderCryptList() {
+    const crypts = this.props.selectedVault.crypts;
+    if (!crypts) {
+      return (
+        <div className='no-crypts-message'>
+          No Crypts in Vault
+        </div>
+      )
+    } else {
+      return crypts.map(crypt => {
+        return (
+          <CryptListComponent
+            key={crypt.name}
+            crypt={crypt}
+          />
+        )
+      })
+    }
+  }
 
   render() {
+    const vault = this.props.selectedVault;
     return (
-      <div className='vault-container'>
-        <h3>{this.props.selectedVault.name}</h3>
+      <div className='vault-body'>
+        <div className='vault-container'>
+          <div className='vault-navigation-container'>
+            <div className='col col-7'>
+              <h4 className='vault-header'>{vault.name}</h4>
+            </div>
+            <div className='col col-3 push-right'>
+              <h5 className='create-crypt-button'>CREATE CRYPT</h5>
+            </div>
+          </div>
+          <hr className='vault-hr'/>
+          <div className='vault-content'>
+            <div className='col col-3 crypt-list'>
+              <h4 className='crypt-list-header'>Crypts</h4>
+              <hr className='vault-hr'/>
+              {this.renderCryptList()}
+            </div>
+            <div className='col col-8 crypt-content'>
+              <div className='crypt-content-navigation'>
+                <div className='col col-10'>
+                  <h4 className='crypt-content-header'>Gems</h4>
+                </div>
+                <div className='col col-2'>
+                  <h5 className='create-gem-button'>CREATE GEM</h5>
+                </div>
+              </div>
+              <hr className='vault-hr'/>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
