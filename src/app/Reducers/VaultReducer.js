@@ -7,11 +7,12 @@ import {
   CREATE_VAULT,
   CREATE_VAULT_FAIL
 } from '../Actions/VaultActions';
+// import { vaultSchema, cryptSchema, gemSchema } from '../Middleware/vaultSchema';
 
 const defaultState = {
   fetching: false,
   fetched: false,
-  vaults: []
+  vaults: {}
 };
 
 export default (state = defaultState, action) => {
@@ -28,11 +29,18 @@ export default (state = defaultState, action) => {
         fetched: false
       }
     case RECEIVE_VAULTS:
+    console.log('REDUCED VAULTS:', action.vaults);
+      const reducedVaults = action.vaults.reduce((accumulator, element) => {
+        let id = element._id;
+        accumulator = {[id]: element};
+        return accumulator;
+      }, {})
+      console.log('REDUCED VAULTS:', reducedVaults);
       return {
         ...state,
         fetching: false,
         fetched: true,
-        vaults: action.vaults
+        vaults: reducedVaults
       }
     case CREATE_VAULT:
       return {

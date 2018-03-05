@@ -10,7 +10,9 @@ export class BankListComponent extends React.Component {
     this.renderVaults();
   }
   renderVaults() {
-    return this.props.vaults.map(vault => {
+    const vaults = this.props.vaults;
+    return Object.keys(this.props.vaults).map(vault_id => {
+      const vault = this.props.vaults[vault_id];
       return (
         <BankListItemComponent
           key={vault.name}
