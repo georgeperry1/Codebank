@@ -1,6 +1,6 @@
 'use strict'
 
-import { normalize, schema } from 'normalizr';
+// import { normalize, schema } from 'normalizr';
 // import * as VaultActions from '../Actions/VaultActions';
 import {
   REQUEST_VAULTS,
@@ -35,6 +35,7 @@ export const apiService = store => next => action => {
   }
 
   if (action.type === CREATE_VAULT) {
+    console.log('CRYPTS:', action.vault);
     fetch(API_ROOT + action.meta.params, {
       method: 'POST',
       header: {
