@@ -9,24 +9,27 @@ import {
 const defaultState = {
   fetching: false,
   fetched: false,
-  selectedVault: []
+  selectedVault: {}
 };
 
 export default (state = defaultState, action) => {
   switch (action.type) {
     case SHOW_VAULT:
+    console.log('SHOW_VAULT reducer');
       return {
         ...state,
         fetching: true
       }
     case SHOW_VAULT_SUCCESS:
+    console.log('SHOW_VAULT_SUCCESS reducer', action.vault);
     return {
       ...state,
       fetching: false,
       fetched: true,
-      selectedVault: action.vaultId
+      selectedVault: action.vault
     }
     case SHOW_VAULT_FAIL:
+    console.log('SHOW_VAULT_FAIL reducer');
       return {
         ...state,
         fetching: false,

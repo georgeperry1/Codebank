@@ -29,7 +29,7 @@
   box-shadow: 4px 4px 10px 0px rgba(176,176,176,0.5);
 }
 
-.bank-list-item-a {
+.bank-list-item-link {
   margin: 0;
   display: inline-block;
   text-decoration: none;

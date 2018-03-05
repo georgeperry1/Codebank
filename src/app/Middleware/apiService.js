@@ -63,6 +63,7 @@ export const apiService = store => next => action => {
   }
   //Show a specified Vault that a user clicks on
   if (action.type === SHOW_VAULT) {
+    console.log('Made it to API Service');
     fetch(API_ROOT + action.meta.params)
     .then(response => response.json())
     .then(fetchedVault => {
@@ -70,7 +71,7 @@ export const apiService = store => next => action => {
         let newAction = {
           ...action,
           type: SHOW_VAULT_SUCCESS,
-          vault: fetchVault
+          vault: fetchedVault
         }
         store.dispatch(newAction);
       } else {

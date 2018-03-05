@@ -49,14 +49,17 @@ export const createVaultFailAction = (vault) => ({
 
 //Show a vault that the user has clicked on
 export const SHOW_VAULT = 'SHOW_VAULT';
-export const showVaultAction = (vaultId) => ({
-  type: SHOW_VAULT,
-  vaultId: vaultId,
-  meta: {
-    params: `/vault/${vaultId}`,
-    method: 'GET'
+export const showVaultAction = (vaultId) => {
+  console.log('Action dispatched');
+  return {
+    type: SHOW_VAULT,
+    vaultId: vaultId,
+    meta: {
+      params: `/vault/${vaultId}`,
+      method: 'GET'
+    }
   }
-});
+};
 
 //If SHOW_VAULT request is successfull
 export const SHOW_VAULT_SUCCESS = 'SHOW_VAULT_SUCCESS'

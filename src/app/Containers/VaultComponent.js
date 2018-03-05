@@ -5,19 +5,11 @@ import React from 'react';
 import '../Styles/VaultComponent.css';
 
 class VaultComponent extends React.Component {
-  componentDidMount() {
-    console.log('I LOADED');
-    this.fetchVault();
-  }
+  // componentDidMount() {
+  //   console.log('I LOADED');
+  // }
 
-  fetchVault = () => {
-    console.log('VAULT ID', this.props.selectedVault);
-    fetch(`http://localhost:3000/vault/${vaultId}`, {
-      method: 'GET'
-    })
-    .then(response => response.json())
-    .then(vault => {console.log('VAULT:', vault)})
-  }
+//Get vault from selected vault
 
   render() {
     return (
