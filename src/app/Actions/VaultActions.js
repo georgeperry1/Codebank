@@ -47,10 +47,19 @@ export const createVaultFailAction = (vault) => ({
   vault: vault
 });
 
+//Pass a specific ID to store
+export const PASS_VAULT_ID = 'PASS_VAULT_ID';
+export const passVaultIdAction = (passedId) => {
+  console.log('PASS Action dispatched');
+  return {
+    type: PASS_VAULT_ID,
+    passedId: passedId
+  }
+}
+
 //Show a vault that the user has clicked on
 export const SHOW_VAULT = 'SHOW_VAULT';
 export const showVaultAction = (vaultId) => {
-  console.log('Action dispatched');
   return {
     type: SHOW_VAULT,
     vaultId: vaultId,

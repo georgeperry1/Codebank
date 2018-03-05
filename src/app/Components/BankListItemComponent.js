@@ -12,7 +12,7 @@ class BankListItemComponent extends React.Component {
   handleClick = () => {
     console.log('Click handled');
     const vaultId = this.props.vault._id;
-    this.props.showVault(vaultId);
+    this.props.passId(vaultId);
   }
 
   render() {
@@ -38,14 +38,12 @@ class BankListItemComponent extends React.Component {
 const mapStateToProps = (state) => {
   return {
     vaults: state.vaultReducer.vaults,
-    selectedVault: state.showVaultReducer.selectedVault
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    showVault: (vaultId) => dispatch(VaultActions.showVaultAction(vaultId))
+    passId: (passedId) => dispatch(VaultActions.passVaultIdAction(passedId))
   }
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(BankListItemComponent);
