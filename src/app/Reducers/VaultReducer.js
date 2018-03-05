@@ -29,11 +29,9 @@ export default (state = defaultState, action) => {
         fetched: false
       }
     case RECEIVE_VAULTS:
-    console.log('REDUCED VAULTS:', action.vaults);
-      const reducedVaults = action.vaults.reduce((accumulator, element) => {
-        let id = element._id;
-        accumulator = {[id]: element};
-        return accumulator;
+      const reducedVaults = action.vaults.reduce((obj, vault) => {
+        let vault_id = vault._id;
+        return Object.assign(obj, {[vault_id]: vault});
       }, {})
       console.log('REDUCED VAULTS:', reducedVaults);
       return {
