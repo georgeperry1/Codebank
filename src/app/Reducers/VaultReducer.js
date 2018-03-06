@@ -7,7 +7,12 @@ import {
   CREATE_VAULT,
   CREATE_VAULT_FAIL
 } from '../Actions/VaultActions';
-// import { vaultSchema, cryptSchema, gemSchema } from '../Middleware/vaultSchema';
+
+import {
+  CREATE_CRYPT,
+  CREATE_CRYPT_SUCCESS,
+  CREATE_CRYPT_FAIL
+} from '../Actions/CryptActions';
 
 const defaultState = {
   fetching: false,
@@ -33,7 +38,6 @@ export default (state = defaultState, action) => {
         let vault_id = vault._id;
         return Object.assign(obj, {[vault_id]: vault});
       }, {})
-      console.log('REDUCED VAULTS:', reducedVaults);
       return {
         ...state,
         fetching: false,
@@ -56,6 +60,22 @@ export default (state = defaultState, action) => {
       }
     case CREATE_VAULT_FAIL:
       return state;
+    case CREATE_CRYPT_SUCCESS:
+      return {
+        ...state,
+        vaults: {
+          ...state.vaults,
+          [action.crypt.parentVault]: {
+            ...state.vaults[action.crypt.parentVault],
+            crypts: [
+              ...state.vaults[action.crypt.parentVault].crypts,
+              action.crypt._id
+            ]
+          }
+        }
+      }
+    case CREATE_CRYPT_FAIL:
+        return state;
     default:
       return state;
   }

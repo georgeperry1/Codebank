@@ -11,7 +11,14 @@ export const createCryptAction = (crypt) => ({
   }
 });
 
-//2: Create Crypt Fail
+//2: Create Crypt Success
+export const CREATE_CRYPT_SUCCESS = 'CREATE_CRYPT_SUCCESS';
+export const createCryptSuccessAction = (crypt) => ({
+  type: CREATE_CRYPT_SUCCESS,
+  crypt: crypt
+});
+
+//3: Create Crypt Fail
 export const CREATE_CRYPT_FAIL = 'CREATE_CRYPT_FAIL';
 export const createCryptFailAction = (crypt) => ({
   type: CREATE_CRYPT_FAIL,

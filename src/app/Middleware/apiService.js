@@ -13,6 +13,7 @@ import {
 
 import {
   CREATE_CRYPT,
+  CREATE_CRYPT_SUCCESS,
   CREATE_CRYPT_FAIL
 } from '../Actions/CryptActions';
 
@@ -104,13 +105,16 @@ export const apiService = store => next => action => {
           crypt: action.crypt
         }
         store.dispatch(newAction);
-      } else {
-        let newAction = {
-          ...action,
-          type: CREATE_VAULT,
-          crypt: action.crypt
-        }
       }
+      return response.json();
+    })
+    .then(crypt => {
+      let newAction = {
+        ...action,
+        type: CREATE_CRYPT_SUCCESS,
+        crypt: crypt
+      }
+      store.dispatch(newAction);
     })
   }
   return next(action)

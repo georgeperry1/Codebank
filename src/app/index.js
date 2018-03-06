@@ -6,7 +6,6 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { createStore, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import { Provider } from 'react-redux';
-// import promise from 'redux-promise-middleware';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import rootReducer from './Reducers/RootReducer';
