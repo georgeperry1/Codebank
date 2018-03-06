@@ -43,22 +43,19 @@ export default (state = defaultState, action) => {
     case CREATE_VAULT:
       return {
         ...state,
-        vaults: [
+        vaults: {
           ...state.vaults,
-          {
+          [action.vault._id]: {
             name: action.vault.name,
             url: action.vault.url,
             description: action.vault.description,
             _id: action.vault._id,
             crypts: action.vault.crypts
-          },
-        ]
+          }
+        }
       }
     case CREATE_VAULT_FAIL:
-      return {
-        ...state,
-        vaults: state.vaults.filter(vault => vault.name !== action.vault.name)
-      }
+      return state;
     default:
       return state;
   }
