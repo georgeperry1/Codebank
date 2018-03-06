@@ -12,10 +12,15 @@ class VaultComponent extends React.Component {
     //Collect data on the selected vault
     if(!this.props.passedId) return null;
     this.props.showVault(this.props.passedId);
-    //Render the list of crypts
-    this.renderCryptList();
   }
 
+  componentWillReceiveProps(nextProps) {
+    //Render list once new one is added
+    if (nextProps.vaults !== this.props.vaults) {
+      this.props.showVault(this.props.passedId);
+      this.renderCryptList()
+    }
+  }
 
   renderCryptList = () => {
     const crypts = this.props.selectedVault.crypts;

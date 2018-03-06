@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add lodash/merge
+  /usr/local/bin/node /usr/local/bin/yarn add babel-polyfil -D
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -37,6 +37,7 @@ npm manifest:
     "dependencies": {
       "cross-fetch": "^2.0.0",
       "humps": "^2.0.1",
+      "lodash": "^4.17.5",
       "normalizr": "^3.2.4",
       "react": "^16.2.0",
       "react-dom": "^16.2.0",
@@ -7072,21 +7073,11 @@ Lockfile:
       untildify "^3.0.2"
 
 Trace: 
-  Error: Command failed.
-  Exit code: 128
-  Command: git
-  Arguments: ls-remote --tags --heads ssh://git@github.com/lodash/merge.git
-  Directory: /Users/georgeperry/Documents/Coding/Portfolio/Codebank
-  Output:
-  Host key verification failed.
-  fatal: Could not read from remote repository.
-  
-  Please make sure you have the correct access rights
-  and the repository exists.
-      at ProcessTermError.MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
-      at new ProcessTermError (/usr/local/lib/node_modules/yarn/lib/cli.js:226:113)
-      at ChildProcess.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:30281:17)
-      at emitTwo (events.js:125:13)
-      at ChildProcess.emit (events.js:213:7)
-      at maybeClose (internal/child_process.js:927:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+  Error: Couldn't find package "babel-polyfil" on the "npm" registry.
+      at new MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
+      at NpmResolver.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:51625:15)
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:98:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:109:13
+      at <anonymous>
+      at process._tickCallback (internal/process/next_tick.js:188:7)
