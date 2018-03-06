@@ -13,10 +13,18 @@ export class GemListComponent extends React.Component {
     const type = this.cleanType(this.props.gem.type);
     return (
       <div className='gem-list-item'>
-        <h5>{this.props.gem.title}</h5>
-        <p><a href={`http://${this.props.gem.url}`}>{this.props.gem.url}</a>
-          <br/>
-          {type}</p>
+        <div className='gem-list-item-info'>
+          <h5 className='gem-list-item-header'>{this.props.gem.title}</h5>
+          <p><a href={`http://${this.props.gem.url}`}>{this.props.gem.url}</a>
+            <br/>
+            {type}
+          </p>
+        </div>
+        <div className='gem-list-item-vote'>
+          <i className='up-vote'></i>
+          Score: {this.props.gem.votes}
+          <i className='down-vote'></i>
+        </div>
       </div>
     )
   }
