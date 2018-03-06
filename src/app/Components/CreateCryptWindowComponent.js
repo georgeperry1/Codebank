@@ -18,7 +18,7 @@ export class CreateCryptWindowComponent extends React.Component {
       <div className='create-crypt-window'>
         <div className='create-crypt-window-inner'>
           <form className='form create-crypt-window-form'>
-            <h3 className='bank-list-heading'>Create a New Vault</h3>
+            <h3 className='bank-list-heading'>Create a New Crypt</h3>
             <hr/>
             <div className='form-item'>
               <label>Crypt Name<span className='req'>*</span></label>
