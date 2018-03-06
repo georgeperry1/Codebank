@@ -54,16 +54,7 @@ export const createVaultFailAction = (vault) => ({
   vault: vault
 });
 
-//7: Pass a specific ID to store
-export const PASS_VAULT_ID = 'PASS_VAULT_ID';
-export const passVaultIdAction = (passedId) => {
-  return {
-    type: PASS_VAULT_ID,
-    passedId: passedId
-  }
-}
-
-//8: Show a vault that the user has clicked on
+//7: Show a vault that the user has clicked on
 export const SHOW_VAULT = 'SHOW_VAULT';
 export const showVaultAction = (vaultId) => {
   return {
@@ -76,7 +67,7 @@ export const showVaultAction = (vaultId) => {
   }
 };
 
-//9: If SHOW_VAULT request is successfull
+//8: If SHOW_VAULT request is successfull
 export const SHOW_VAULT_SUCCESS = 'SHOW_VAULT_SUCCESS'
 export const showVaultSuccessAction = (vault) => {
   return {

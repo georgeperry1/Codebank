@@ -33,21 +33,15 @@ class App extends React.Component {
           <Switch >
             <Route
               exact={true} path='/'
-              render={(props) => (
-                <HomeComponent/>
-              )}
+              component={HomeComponent}
             />
             <Route
               exact={true} path='/vaults'
-              render={(props) => (
-                <BankComponent/>
-              )}
+              component={BankComponent}
             />
             <Route
               exact={true} path='/vault/:vaultId'
-              render={(props) => (
-                <VaultComponent/>
-              )}
+              component={VaultComponent}
             />
           </Switch>
         </HashRouter>

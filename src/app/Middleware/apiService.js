@@ -15,7 +15,10 @@ import {
 import {
   CREATE_CRYPT,
   CREATE_CRYPT_SUCCESS,
-  CREATE_CRYPT_FAIL
+  CREATE_CRYPT_FAIL,
+  SHOW_CRYPT,
+  SHOW_CRYPT_SUCCESS,
+  SHOW_CRYPT_FAIL
 } from '../Actions/CryptActions';
 
 const API_ROOT = 'http://localhost:3000';
@@ -119,6 +122,27 @@ export const apiService = store => next => action => {
         crypt: crypt
       }
       store.dispatch(newAction);
+    })
+  }
+  //Show a selected crypt
+  if (action.type === SHOW_CRYPT) {
+    fetch(API_ROOT + action.meta.params)
+    .then(response => response.json())
+    .then(fetchedCrypt => {
+      if (fetchedCrypt) {
+        let newAction = {
+          ...action,
+          type: SHOW_CRYPT_SUCCESS,
+          crypt: fetchedCrypt
+        }
+        store.dispatch(newAction);
+      } else {
+        let newAction = {
+          ...action,
+          type: SHOW_CRYPT_FAIL
+        }
+        store.dispatch(newAction);
+      }
     })
   }
   return next(action)

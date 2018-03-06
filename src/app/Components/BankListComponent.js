@@ -1,6 +1,6 @@
 'use strict';
 
-import BankListItemComponent from './BankListItemComponent';
+import { BankListItemComponent } from './BankListItemComponent';
 import React from 'react';
 import '../Styles/BankListComponent.css';
 

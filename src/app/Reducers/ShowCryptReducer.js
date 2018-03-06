@@ -1,32 +1,32 @@
 'use strict'
 
 import {
-  SHOW_VAULT,
-  SHOW_VAULT_SUCCESS,
-  SHOW_VAULT_FAIL
-} from '../Actions/VaultActions';
+  SHOW_CRYPT,
+  SHOW_CRYPT_SUCCESS,
+  SHOW_CRYPT_FAIL
+} from '../Actions/CryptActions';
 
 const defaultState = {
   fetching: false,
   fetched: false,
-  selectedVault: {}
+  selectedCrypt: {}
 };
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case SHOW_VAULT:
+    case SHOW_CRYPT:
       return {
         ...state,
         fetching: true
       }
-    case SHOW_VAULT_SUCCESS:
+    case SHOW_CRYPT_SUCCESS:
     return {
       ...state,
       fetching: false,
       fetched: true,
-      selectedVault: action.vault
+      selectedCrypt: action.crypt
     }
-    case SHOW_VAULT_FAIL:
+    case SHOW_CRYPT_FAIL:
       return {
         ...state,
         fetching: false,

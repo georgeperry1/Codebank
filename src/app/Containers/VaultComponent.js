@@ -2,7 +2,9 @@
 
 import { connect } from 'react-redux';
 import CreateCryptComponent from '../Components/CreateCryptComponent';
-import { CryptListComponent } from '../Components/CryptListComponent';
+import CreateGemComponent from  '../Components/CreateGemComponent';
+import CryptListComponent from '../Components/CryptListComponent';
+import { GemListComponent } from '../Components/GemListComponent';
 import React from 'react';
 import * as VaultActions from '../Actions/VaultActions';
 import '../Styles/VaultComponent.css';
@@ -10,20 +12,22 @@ import '../Styles/VaultComponent.css';
 class VaultComponent extends React.Component {
   componentDidMount = () => {
     //Collect data on the selected vault
-    if(!this.props.passedId) return null;
-    this.props.showVault(this.props.passedId);
+    const vaultId = this.props.match.params.vaultId;
+    this.props.showVault(vaultId);
   }
 
   componentWillReceiveProps(nextProps) {
     //Render list once new one is added
     if (nextProps.vaults !== this.props.vaults) {
       this.props.showVault(this.props.passedId);
-      this.renderCryptList()
+      this.renderCryptList();
+      this.renderGemList();
     }
   }
 
   renderCryptList = () => {
     const crypts = this.props.selectedVault.crypts;
+    const parentVaultId = this.props.match.params.vaultId;
     if (!crypts) {
       return (
         <div className='no-crypts-message'>
@@ -36,6 +40,34 @@ class VaultComponent extends React.Component {
           <CryptListComponent
             key={crypt.name}
             crypt={crypt}
+            parentVaultId={parentVaultId}
+          />
+        )
+      })
+    }
+  }
+
+  renderGemList = () => {
+    const gems = this.props.selectedCrypt.gems;
+    if (!gems) {
+      return (
+        <div className='no-crypts-message'>
+          Select a Crypt
+        </div>
+      )
+    } else {
+      if (gems.length === 0) {
+        return (
+          <div className='no-crypts-message'>
+            No Gems in Crypt
+          </div>
+        )
+      }
+      return gems.map(gem => {
+        return (
+          <GemListComponent
+            key={gem.title}
+            gem={gem}
           />
         )
       })
@@ -44,6 +76,7 @@ class VaultComponent extends React.Component {
 
   render() {
     const vault = this.props.selectedVault;
+    const crypt = this.props.selectedCrypt;
     return (
       <div className='vault-body'>
         <div className='vault-container'>
@@ -64,14 +97,11 @@ class VaultComponent extends React.Component {
             </div>
             <div className='col col-8 crypt-content'>
               <div className='crypt-content-navigation'>
-                <div className='col col-10'>
-                  <h4 className='crypt-content-header'>Gems</h4>
-                </div>
-                <div className='col col-2'>
-                  <h5 className='create-gem-button'>CREATE GEM</h5>
-                </div>
+                <h4 className='crypt-content-header'>{/*crypt.name*/} Gems</h4>
+                <CreateGemComponent />
               </div>
               <hr className='vault-hr'/>
+              {this.renderGemList()}
             </div>
           </div>
         </div>
@@ -85,7 +115,7 @@ const mapStateToProps = (state) => {
   return {
     vaults: state.vaultReducer.vaults,
     selectedVault: state.showVaultReducer.selectedVault,
-    passedId: state.showVaultReducer.passedId
+    selectedCrypt: state.showCryptReducer.selectedCrypt
   }
 }
 
