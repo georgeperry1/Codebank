@@ -6,7 +6,7 @@ export const createGemAction = (gem) => ({
   type: CREATE_GEM,
   gem: gem,
   meta: {
-    params: `/vault/${gem.parentVault}/${gem.parentCrypt}/create`,
+    params: `/vault/${gem.parentVaultId}/${gem.parentCryptId}/create`,
     method: 'POST'
   }
 });

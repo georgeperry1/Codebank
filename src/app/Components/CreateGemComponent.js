@@ -37,7 +37,10 @@ class CreateGemComponent extends React.Component {
           >
             Create Gem
           </button>
-          {this.state.showWindow ? <CreateGemWindowComponent createNewGem={(newGemInfo) => {this.createNewGem(newGemInfo)}}/> : null}
+          {this.state.showWindow ? <CreateGemWindowComponent
+            parentVault={this.props.selectedVault}
+            parentCrypt={this.props.selectedCrypt}
+            createNewGem={(newGemInfo) => {this.createNewGem(newGemInfo)}}/> : null}
         </div>
       </div>
     )
@@ -47,13 +50,14 @@ class CreateGemComponent extends React.Component {
 const mapStateToProps = (state) => {
   return {
     vaults: state.vaultReducer.vaults,
-    selectedVault: state.showVaultReducer.selectedVault
+    selectedVault: state.showVaultReducer.selectedVault,
+    selectedCrypt: state.showCryptReducer.selectedCrypt
   }
 }
 
 const mapDispatchToProps = (dispatch) => ({
   createGem: (gem) => dispatch(GemActions.createGemAction(gem)),
-  createVaultFail: (gem) => dispatch(GemActions.createGemFailAction(gem))
+  createGemFail: (gem) => dispatch(GemActions.createGemFailAction(gem))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateGemComponent);

@@ -9,7 +9,7 @@ import '../Styles/BankComponent.css';
 
 class BankComponent extends React.Component {
   componentDidMount = () => {
-    this.props.requestVaults(this.props.vaults);
+    this.props.requestVaults(this.props.vaults, this.props.crypts);
   }
 
   render() {
@@ -28,12 +28,13 @@ class BankComponent extends React.Component {
 const mapStateToProps = (state) => {
   return {
     vaults: state.vaultReducer.vaults,
+    crypts: state.vaultReducer.crypts,
     selectedVault: state.showVaultReducer.selectedVault
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    requestVaults: (vaults) => dispatch(VaultActions.requestVaults(vaults)),
+    requestVaults: (vaults, crypts) => dispatch(VaultActions.requestVaults(vaults, crypts)),
   }
 }
 

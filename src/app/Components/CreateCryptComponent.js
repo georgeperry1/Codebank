@@ -21,6 +21,7 @@ class CreateCryptComponent extends React.Component {
   }
 
   createNewCrypt = (newCryptInfo) => {
+    console.log('STAGE 1:', newCryptInfo);
     this.setState({
       showWindow:!this.state.showWindow
     });
@@ -53,7 +54,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   createCrypt: (crypt) => dispatch(CryptActions.createCryptAction(crypt)),
-  createVaultFail: (crypt) => dispatch(CryptActions.createCryptFailAction(crypt))
+  createCryptFail: (crypt) => dispatch(CryptActions.createCryptFailAction(crypt))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateCryptComponent);

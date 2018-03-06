@@ -18,8 +18,9 @@ class VaultComponent extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     //Render list once new one is added
+    const vaultId = this.props.match.params.vaultId;
     if (nextProps.vaults !== this.props.vaults) {
-      this.props.showVault(this.props.passedId);
+      this.props.showVault(vaultId);
       this.renderCryptList();
       this.renderGemList();
     }
@@ -97,7 +98,7 @@ class VaultComponent extends React.Component {
             </div>
             <div className='col col-8 crypt-content'>
               <div className='crypt-content-navigation'>
-                <h4 className='crypt-content-header'>{/*crypt.name*/} Gems</h4>
+                <h4 className='crypt-content-header'>{crypt.name} Gems</h4>
                 <CreateGemComponent />
               </div>
               <hr className='vault-hr'/>

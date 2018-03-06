@@ -15,10 +15,17 @@ import {
   CREATE_CRYPT_FAIL
 } from '../Actions/CryptActions';
 
+import {
+  CREATE_GEM,
+  CREATE_GEM_SUCCESS,
+  CREATE_GEM_FAIL
+} from '../Actions/GemActions';
+
 const defaultState = {
   fetching: false,
   fetched: false,
-  vaults: {}
+  vaults: {},
+  gems: []
 };
 
 export default (state = defaultState, action) => {
@@ -43,7 +50,7 @@ export default (state = defaultState, action) => {
         ...state,
         fetching: false,
         fetched: true,
-        vaults: reducedVaults
+        vaults: reducedVaults,
       }
     case CREATE_VAULT_SUCCESS:
       return {
@@ -70,13 +77,24 @@ export default (state = defaultState, action) => {
             ...state.vaults[action.crypt.parentVault],
             crypts: [
               ...state.vaults[action.crypt.parentVault].crypts,
-              action.crypt._id
+            action.crypt._id
             ]
           }
         }
       }
     case CREATE_CRYPT_FAIL:
         return state;
+    case CREATE_GEM_SUCCESS:
+      console.log('GEM IN REDUCER:', action.gem);
+      return {
+        ...state,
+          gems: [
+            ...state.gems,
+            action.gem
+          ]
+        }
+    case CREATE_GEM_FAIL:
+      return state;
     default:
       return state;
   }

@@ -21,6 +21,12 @@ import {
   SHOW_CRYPT_FAIL
 } from '../Actions/CryptActions';
 
+import {
+  CREATE_GEM,
+  CREATE_GEM_SUCCESS,
+  CREATE_GEM_FAIL
+} from '../Actions/GemActions';
+
 const API_ROOT = 'http://localhost:3000';
 
 export const apiService = store => next => action => {
@@ -33,7 +39,7 @@ export const apiService = store => next => action => {
         let newAction = {
           ...action,
           type: RECEIVE_VAULTS,
-          vaults: fetchedVaults
+          vaults: fetchedVaults.vaults,
         }
         store.dispatch(newAction);
       } else {
@@ -143,6 +149,36 @@ export const apiService = store => next => action => {
         }
         store.dispatch(newAction);
       }
+    })
+  }
+  //Create a new Gem
+  if (action.type === CREATE_GEM) {
+    fetch(API_ROOT + action.meta.params, {
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(action.gem)
+    })
+    .then(response => {
+      if (response.status === 404) {
+        let newAction = {
+          ...action,
+          type: CREATE_GEM_FAIL,
+          gem: action.gem
+        }
+        store.dispatch(newAction);
+      }
+      return response.json();
+    })
+    .then(gem => {
+      console.log('FETCHED GEM:', gem);
+      let newAction = {
+        ...action,
+        type: CREATE_GEM_SUCCESS,
+        gem: gem
+      }
+      store.dispatch(newAction);
     })
   }
   return next(action)

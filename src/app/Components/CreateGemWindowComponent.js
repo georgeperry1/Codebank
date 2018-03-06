@@ -8,12 +8,11 @@ export class CreateGemWindowComponent extends React.Component {
     const newGemInfo = {
       title: this.title.value,
       url: this.url.value,
-      type: this.type.value
-      //get parent vault
-      //get paren crypt
+      type: this.type.value,
+      parentVaultId: this.props.parentVault._id,
+      parentCryptId: this.props.parentCrypt._id
     };
-    console.log('NEW GEM:', newGemInfo);
-    //this.props.createNewGem(newGemInfo);
+    this.props.createNewGem(newGemInfo);
     this.title.value = null;
     this.url.value = null;
     this.type.value = null;

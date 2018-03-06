@@ -6,6 +6,7 @@ export const requestVaults = (vaults) => {
   return {
     type: REQUEST_VAULTS,
     vaults: vaults,
+    //crypts: crypts,
     meta: {
       params: '/vaults',
       method: 'GET'
@@ -17,7 +18,8 @@ export const RECEIVE_VAULTS = 'RECEIVE_VAULTS'
 export const receiveVaults = (vaults) => {
   return {
     type: RECEIVE_VAULTS,
-    vaults: vaults
+    vaults: vaults,
+    //crypts: crypts
   }
 }
 //3: failedFetchVaults Action Function
