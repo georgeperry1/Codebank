@@ -9,7 +9,6 @@ export class CreateCryptWindowComponent extends React.Component {
       name: this.name.value,
       parentVault: this.props.parentVault
     };
-    console.log('Crypt Info:', newCryptInfo);
     this.props.createNewCrypt(newCryptInfo);
     this.name.value = null;
   }

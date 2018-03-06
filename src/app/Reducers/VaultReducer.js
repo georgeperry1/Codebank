@@ -5,6 +5,7 @@ import {
   RECEIVE_VAULTS,
   RECEIVE_VAULTS_FAIL,
   CREATE_VAULT,
+  CREATE_VAULT_SUCCESS,
   CREATE_VAULT_FAIL
 } from '../Actions/VaultActions';
 
@@ -44,7 +45,7 @@ export default (state = defaultState, action) => {
         fetched: true,
         vaults: reducedVaults
       }
-    case CREATE_VAULT:
+    case CREATE_VAULT_SUCCESS:
       return {
         ...state,
         vaults: {

@@ -5,6 +5,7 @@ import {
   RECEIVE_VAULTS,
   RECEIVE_VAULTS_FAIL,
   CREATE_VAULT,
+  CREATE_VAULT_SUCCESS,
   CREATE_VAULT_FAIL,
   SHOW_VAULT,
   SHOW_VAULT_SUCCESS,
@@ -58,13 +59,16 @@ export const apiService = store => next => action => {
           vault: action.vault
         }
         store.dispatch(newAction);
-      } else {
-        let newAction = {
-          ...action,
-          type: CREATE_VAULT,
-          vault: action.vault
-        }
       }
+      return response.json();
+    })
+    .then(vault => {
+      let newAction = {
+        ...action,
+        type: CREATE_VAULT_SUCCESS,
+        vault: vault
+      }
+      store.dispatch(newAction);
     })
   }
   //Show a specified Vault that a user clicks on
@@ -120,6 +124,7 @@ export const apiService = store => next => action => {
   return next(action)
 }
 
+//ATTEMPT TO REFACTOR:
 // const callApi = action => {
 //   let apiData;
 //   if (action.meta.method === 'GET') {

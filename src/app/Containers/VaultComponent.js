@@ -17,7 +17,7 @@ class VaultComponent extends React.Component {
   }
 
 
-  renderCryptList() {
+  renderCryptList = () => {
     const crypts = this.props.selectedVault.crypts;
     if (!crypts) {
       return (
