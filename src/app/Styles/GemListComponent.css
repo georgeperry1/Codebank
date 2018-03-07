@@ -33,6 +33,7 @@
 }
 
 .up-vote {
+  cursor: pointer;
   margin-bottom: 5px;
   margin-left: 5px;
   display: block;
@@ -45,6 +46,7 @@
 }
 
 .down-vote {
+  cursor: pointer;
   margin-top: 5px;
   margin-left: 5px;
   display: block;
@@ -55,7 +57,7 @@
   border-top: 20px solid rgba(28, 175, 198, 0.75);
   border-radius: 3px;
 }
-
+/*
 @-webkit-keyframes gem-list-item {
   0% {
     -webkit-transform: translateY(-5px);
@@ -102,7 +104,7 @@
     -webkit-transform: translateY(-5px);
     transform: translateY(-5px);
   }
-}
+} */
 
 .gem-list-item {
   max-width: content;
@@ -114,7 +116,7 @@
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
 }
-.gem-list-item:hover, .gem-list-item:focus, .gem-list-item:active {
+/* .gem-list-item:hover, .gem-list-item:focus, .gem-list-item:active {
   -webkit-animation-name: gem-list-item-float, gem-list-item;
   animation-name: gem-list-item-float, gem-list-item;
   -webkit-animation-duration: .3s, 1.5s;
@@ -129,4 +131,4 @@
   animation-fill-mode: forwards;
   -webkit-animation-direction: normal, alternate;
   animation-direction: normal, alternate;
-}
+} */

@@ -4,6 +4,25 @@ import React from 'react';
 import '../Styles/GemListComponent.css';
 
 export class GemListComponent extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      votes: 0
+    }
+  }
+
+  handleClickUp = () => {
+    this.setState({
+      votes: this.state.votes + 1
+    })
+  }
+
+  handleClickDown = () => {
+    this.setState({
+      votes: this.state.votes - 1
+    })
+  }
+
   cleanType(type) {
     const lowerType = type.toLowerCase();
     return lowerType.charAt(0).toUpperCase() + lowerType.slice(1);
@@ -21,9 +40,15 @@ export class GemListComponent extends React.Component {
           </p>
         </div>
         <div className='gem-list-item-vote'>
-          <i className='up-vote'></i>
-          Score: {this.props.gem.votes}
-          <i className='down-vote'></i>
+          <div
+            className='up-vote'
+            onClick={this.handleClickUp}
+          ></div>
+          Score: {this.state.votes}
+          <div
+            className='down-vote'
+            onClick={this.handleClickDown}
+          ></div>
         </div>
       </div>
     )
