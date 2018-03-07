@@ -20,11 +20,12 @@ export class CreateGemWindowComponent extends React.Component {
 
   render() {
     return (
-      <div className='create-vault-window'>
-        <div className='create-vault-window-inner'>
-          <form className='form create-vault-window-form'>
+      <div className='create-gem-window'>
+        <div className='create-gem-window-inner'>
+          <form className='form create-gem-window-form'>
             <h3 className='bank-list-heading'>Create a New Gem</h3>
             <hr/>
+            {/* TITLE */}
             <div className='form-item'>
               <label>Gem Title<span className='req'>*</span></label>
               <input
@@ -36,6 +37,7 @@ export class CreateGemWindowComponent extends React.Component {
               ></input>
               <div className='desc'>Gems can be articles, videos, courses or GitHub Repos you find useful</div>
             </div>
+            {/* URL */}
             <div className='form-item'>
               <label>Gem URL<span className='req'>*</span></label>
               <input
@@ -46,6 +48,7 @@ export class CreateGemWindowComponent extends React.Component {
                 required
               ></input>
             </div>
+            {/* TYPE */}
             <div className='form-item'>
               <label>Gem Type<span className='req'>*</span></label>
               <input
@@ -57,6 +60,7 @@ export class CreateGemWindowComponent extends React.Component {
               ></input>
             </div>
 
+            {/* BUTTON */}
             <div className='form-button-container'>
               <button
                 className='create-vault-form-button'
@@ -65,6 +69,7 @@ export class CreateGemWindowComponent extends React.Component {
               >
                 Submit Gem
               </button>
+              <div className='space'></div>
               <div className='desc'>Gem submissions will be subject to moderation</div>
             </div>
           </form>
