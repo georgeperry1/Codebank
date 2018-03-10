@@ -1,5 +1,5 @@
-<div>
- <img align="center" width="274" height="81" src="./Codebank.png"></img>
+<div align="center">
+ <img width="274" height="81" src="./Codebank.png"></img>
 </div>
 
 # Codebank
